@@ -4,6 +4,7 @@ import theme from "./theme/theme";
 import NavBar from "./components/NavBar";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <About />
       <Skills />
+      <Projects />
     </ThemeProvider>
   );
 }
