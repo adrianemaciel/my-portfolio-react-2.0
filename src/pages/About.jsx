@@ -1,6 +1,11 @@
 import { Box, Typography, Button, Container } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import { fadeIn, slideIn } from "../animations/animations";
 
 const About = () => {
+  const theme = useTheme();
+
   return (
     <Container maxWidth="xl">
       <Box
@@ -10,20 +15,67 @@ const About = () => {
         justifyContent="center"
         height="100vh"
       >
-        <Typography variant="h2" color="primary">
-          Hello, I am <span style={{ color: "#EF8354" }}>Adriane Maciel</span>,
-        </Typography>
-        <Typography variant="h3" color="text.primary">
-          Developer Software
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary">
-          Systems analysis and development student and developer enthusiastic
-          about creating <span style={{ color: "#EF8354" }}>interactive</span>{" "}
-          digital experiences on the web.
-        </Typography>
-        <Button variant="outlined" color="secondary" sx={{ mt: 4 }}>
-          Let’s get in touch!
-        </Button>
+        <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+          <Typography
+            variant="h2"
+            sx={{
+              color: theme.palette.primary.main,
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+            }}
+          >
+            Hello,
+          </Typography>
+        </motion.div>
+
+        <motion.div initial="hidden" animate="visible" variants={slideIn}>
+          <Typography variant="h2" sx={{ color: theme.palette.text.primary }}>
+            I am{" "}
+            <Box
+              component="span"
+              sx={{
+                color: theme.palette.secondary.main,
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+                letterSpacing: "0.1rem",
+              }}
+            >
+              Adriane Maciel,
+            </Box>
+          </Typography>
+        </motion.div>
+
+        <motion.div initial="hidden" animate="visible" variants={slideIn}>
+          <Typography variant="h3" sx={{ color: theme.palette.text.primary }}>
+            Software Developer
+          </Typography>
+        </motion.div>
+
+        <motion.div initial="hidden" animate="visible" variants={slideIn}>
+          <Typography
+            variant="subtitle1"
+            sx={{ color: theme.palette.text.secondary }}
+          >
+            Systems analysis and development student and developer enthusiastic
+            about creating{" "}
+            <Box component="span" sx={{ color: theme.palette.secondary.main }}>
+              interactive{" "}
+            </Box>
+            digital experiences on the web.
+          </Typography>
+        </motion.div>
+
+        <motion.div initial="hidden" animate="visible" variants={slideIn}>
+          <Button
+            variant="outlined"
+            color="secondary"
+            sx={{
+              mt: 4,
+              borderColor: theme.palette.secondary.main,
+              color: theme.palette.secondary.main,
+            }}
+          >
+            Let’s get in touch!
+          </Button>
+        </motion.div>
       </Box>
     </Container>
   );
