@@ -1,7 +1,8 @@
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "../animations/animations";
+import SocialButtons from "../components/SocialButtons";
 
 const About = () => {
   const theme = useTheme();
@@ -64,17 +65,7 @@ const About = () => {
         </motion.div>
 
         <motion.div initial="hidden" animate="visible" variants={slideIn}>
-          <Button
-            variant="outlined"
-            color="secondary"
-            sx={{
-              mt: 4,
-              borderColor: theme.palette.secondary.main,
-              color: theme.palette.secondary.main,
-            }}
-          >
-            Let’s get in touch!
-          </Button>
+          <SocialButtons />
         </motion.div>
       </Box>
     </Container>
