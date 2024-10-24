@@ -1,25 +1,16 @@
 import { Box, Container, Typography, useTheme } from "@mui/material";
-
-const skills = [
-  { name: "JavaScript", size: 36 },
-  { name: "React", size: 28 },
-  { name: "Node", size: 30 },
-  { name: "SQL", size: 22 },
-  { name: "Express", size: 34 },
-  { name: "CSS", size: 24 },
-  { name: "HTML", size: 26 },
-  { name: "MySQL", size: 20 },
-  { name: "Figma", size: 18 },
-  { name: "Postman", size: 24 },
-  { name: "Styled-Components", size: 18 },
-  { name: "Material UI", size: 28 },
-  { name: "Vite", size: 26 },
-  { name: "Git", size: 26 },
-  { name: "GitHub", size: 24 },
-];
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { slideIn, staggerContainer, skillItem } from "../animations/animations";
+import skills from "../data/skillsData";
 
 const Skills = () => {
   const theme = useTheme();
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <Container maxWidth="xl">
@@ -31,28 +22,33 @@ const Skills = () => {
           minHeight: "50vh",
           backgroundColor: theme.palette.background.default,
         }}
+        ref={ref}
       >
-        <Box
-          sx={{
-            width: "30%",
-            color: theme.palette.text.primary,
-          }}
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={slideIn}
+          style={{ width: "30%", color: theme.palette.text.primary }}
         >
           <Typography
             variant="h3"
             component="h2"
             sx={{ color: theme.palette.text.primary, marginBottom: "1rem" }}
           >
-            <span style={{ color: "#EF8354" }}>Skills</span> and Tools
+            <span style={{ color: theme.palette.secondary.main }}>Skills</span>{" "}
+            and Tools
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet
-            metus enim, eget facilisis metus interdum ac.
+            Constantly learning and mastering tools to create seamless digital
+            experiences.
           </Typography>
-        </Box>
+        </motion.div>
 
-        <Box
-          sx={{
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={staggerContainer}
+          style={{
             width: "60%",
             height: "100%",
             position: "relative",
@@ -64,9 +60,10 @@ const Skills = () => {
           }}
         >
           {skills.map((skill, index) => (
-            <Box
+            <motion.div
               key={index}
-              sx={{
+              variants={skillItem}
+              style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -80,13 +77,14 @@ const Skills = () => {
                   color: theme.palette.text.secondary,
                   textAlign: "center",
                   fontFamily: theme.typography.fontFamily,
+                  fontWeight: "bold",
                 }}
               >
                 {skill.name}
               </Typography>
-            </Box>
+            </motion.div>
           ))}
-        </Box>
+        </motion.div>
       </Box>
     </Container>
   );
