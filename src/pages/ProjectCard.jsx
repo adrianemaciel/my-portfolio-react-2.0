@@ -5,8 +5,10 @@ import {
   Typography,
   Button,
   CardActions,
+  Box,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { getTechnologyIcon } from "../utils/iconMapper";
 
 const ProjectCard = ({
   title,
@@ -14,6 +16,7 @@ const ProjectCard = ({
   imageUrl,
   projectLink,
   githubLink,
+  technologies,
 }) => {
   const theme = useTheme();
 
@@ -41,7 +44,14 @@ const ProjectCard = ({
         >
           {description}
         </Typography>
+
+        <Box sx={{ display: "flex", gap: 1.5, mt: 2 }}>
+          {technologies?.map((tech) => (
+            <Box key={tech}>{getTechnologyIcon(tech, theme)}</Box>
+          ))}
+        </Box>
       </CardContent>
+
       <CardActions>
         <Button
           variant="outlined"
