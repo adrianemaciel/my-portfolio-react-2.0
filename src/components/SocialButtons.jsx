@@ -1,6 +1,7 @@
 import { Box, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 import { useTheme } from "@mui/material/styles";
 
 const SocialButtons = () => {
@@ -13,7 +14,6 @@ const SocialButtons = () => {
         href="https://www.linkedin.com/in/adrianemacieldeveloper/"
         target="_blank"
         rel="noopener noreferrer"
-        color="secondary"
         sx={{
           borderColor: theme.palette.secondary.main,
           color: theme.palette.secondary.main,
@@ -28,7 +28,6 @@ const SocialButtons = () => {
         href="https://github.com/adrianemaciel"
         target="_blank"
         rel="noopener noreferrer"
-        color="secondary"
         sx={{
           borderColor: theme.palette.secondary.main,
           color: theme.palette.secondary.main,
@@ -36,6 +35,20 @@ const SocialButtons = () => {
         }}
       >
         <GitHubIcon />
+      </IconButton>
+
+      <IconButton
+        component="a"
+        href="mailto:adrianemaciel.developer@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          borderColor: theme.palette.secondary.main,
+          color: theme.palette.secondary.main,
+          border: "1px solid",
+        }}
+      >
+        <EmailIcon />
       </IconButton>
     </Box>
   );
