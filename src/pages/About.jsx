@@ -8,7 +8,7 @@ const About = () => {
   const theme = useTheme();
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id="about">
       <Box
         display="flex"
         flexDirection="column"

@@ -14,6 +14,7 @@ const Skills = () => {
 
   return (
     <Box
+      id="skills"
       sx={{
         display: "flex",
         justifyContent: "space-between",

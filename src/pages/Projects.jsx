@@ -5,7 +5,7 @@ import projects from "../data/projectsData";
 
 const Projects = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id="projects">
       <Box
         sx={{
           minHeight: "100vh",
