@@ -4,7 +4,7 @@ const projects = [
     description:
       "Portfólio Pessoal em desenvolvimento com Vite, React e Material UI.",
     imageUrl: "src/assets/demo-personal-portfolio.png",
-    projectLink: "https://example.com/project1",
+    projectLink: "https://adrianemaciel-portfolio-netlify.netlify.app/",
     githubLink: "https://github.com/adrianemaciel/my-portfolio-react-2.0",
     technologies: ["Vite", "React", "Framer Motion", "GitHub", "Git"],
   },
