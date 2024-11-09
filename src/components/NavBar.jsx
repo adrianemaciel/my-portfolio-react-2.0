@@ -1,6 +1,7 @@
 import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import NavButton from "./NavButton";
+import BackToTopButton from "./BackToTopButton";
 
 const NavBar = () => {
   const theme = useTheme();
@@ -10,6 +11,7 @@ const NavBar = () => {
       <AppBar position="static" color="background">
         <Container maxWidth="xl">
           <Toolbar
+            id="back-to-top-anchor"
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -37,6 +39,7 @@ const NavBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
+      <BackToTopButton />
     </Box>
   );
 };
