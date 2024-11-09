@@ -1,49 +1,58 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import ProjectCard from "./ProjectCard";
 import projects from "../data/projectsData";
 
 const Projects = () => {
+  const theme = useTheme();
   return (
-    <Container maxWidth="xl" id="projects">
+    <Box
+      id="projects"
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "space-around",
+        width: "xl",
+        alignItems: "center",
+        padding: "80px",
+      }}
+    >
       <Box
         sx={{
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "space-between",
-          width: "xl",
-          alignItems: "center",
-          padding: "80px",
+          width: "30%",
         }}
       >
-        <Box
+        <Typography
+          variant="h3"
+          component="h2"
           sx={{
-            width: "30%",
+            color: theme.palette.text.primary,
+            marginBottom: "1rem",
+            lineHeight: 1.6,
           }}
         >
-          <Typography variant="h4" sx={{ lineHeight: 1.6 }}>
-            Take a look at my developed projects
-          </Typography>
-        </Box>
-
-        <Box sx={{ width: "60%", flexDirection: "row" }}>
-          <Grid container spacing={8}>
-            {projects.map((project, index) => (
-              <Grid item xs={10} key={index}>
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                  projectLink={project.projectLink}
-                  githubLink={project.githubLink}
-                  technologies={project.technologies}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+          Take a look at my developed{" "}
+          <span style={{ color: theme.palette.secondary.main }}>projects</span>{" "}
+        </Typography>
       </Box>
-    </Container>
+
+      <Box sx={{ width: "50%", flexDirection: "row" }}>
+        <Grid container spacing={8}>
+          {projects.map((project, index) => (
+            <Grid xs={10} key={index}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                projectLink={project.projectLink}
+                githubLink={project.githubLink}
+                technologies={project.technologies}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Box>
   );
 };
 
