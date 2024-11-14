@@ -11,17 +11,12 @@ const Projects = () => {
       sx={{
         minHeight: "100vh",
         display: "flex",
-        justifyContent: "space-around",
-        width: "xl",
+        flexDirection: { xs: "column", md: "column", xl: "row" },
         alignItems: "center",
-        padding: "80px",
+        padding: { xs: "20px", md: "40px", xl: "80px" },
       }}
     >
-      <Box
-        sx={{
-          width: "30%",
-        }}
-      >
+      <Box>
         <Typography
           variant="h3"
           component="h2"
@@ -29,6 +24,8 @@ const Projects = () => {
             color: theme.palette.text.primary,
             marginBottom: "1rem",
             lineHeight: 1.6,
+            textAlign: "center",
+            fontSize: { xs: " 2rem", md: "3rem", xl: "3rem" },
           }}
         >
           Take a look at my developed{" "}
@@ -36,8 +33,8 @@ const Projects = () => {
         </Typography>
       </Box>
 
-      <Box sx={{ width: "50%", flexDirection: "row" }}>
-        <Grid container spacing={8}>
+      <Box>
+        <Grid container spacing={8} justifyContent="center">
           {projects.map((project, index) => (
             <Grid xs={10} key={index}>
               <ProjectCard
