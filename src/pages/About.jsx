@@ -8,7 +8,7 @@ const About = () => {
   const theme = useTheme();
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" id="about">
       <Box
         display="flex"
         flexDirection="column"
@@ -53,7 +53,7 @@ const About = () => {
         <motion.div initial="hidden" animate="visible" variants={slideIn}>
           <Typography
             variant="subtitle1"
-            sx={{ color: theme.palette.text.secondary }}
+            sx={{ color: theme.palette.text.secondary, marginBottom: "1.5rem" }}
           >
             Systems analysis and development student and developer enthusiastic
             about creating{" "}
