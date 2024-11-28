@@ -1,11 +1,55 @@
-import { Box } from "@mui/material";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Box, Snackbar, Alert } from "@mui/material";
 import SubmitButton from "./SubmitButton";
 import StyledTextField from "./StyledTextField";
 
 const ContactForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Formulário enviado!");
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (name === "" || email === "" || message === "") {
+      setSnackbarSeverity("error")
+      setSnackbarMessage("Please fill out all fields.")
+      setSnackbarOpen(true)
+      return;
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+    }
+
+    emailjs.send(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_PUBLIC_KEY
+    )
+      .then(() => {
+        setSnackbarSeverity("success")
+        setSnackbarMessage("Your email was sent successfully!")
+        setSnackbarOpen(true)
+        setName("");
+        setEmail("");
+        setMessage("");
+      },
+        (error) => {
+          console.log("Failed to send email:", error);
+          setSnackbarSeverity("error")
+          setSnackbarMessage("There was an error sending your email. Please try again")
+          setSnackbarOpen(true)
+
+        }
+      )
   };
 
   return (
@@ -18,10 +62,44 @@ const ContactForm = () => {
           mt: 4,
         }}
       >
-        <StyledTextField label="Name" />
-        <StyledTextField label="E-mail" />
-        <StyledTextField label="Message" multiline rows={4} />
+        <StyledTextField
+          label="Name"
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <StyledTextField
+          label="E-mail"
+          type="text"
+          placeholder=" E-mail"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <StyledTextField
+          label="Message"
+          type="message"
+          multiline rows={4}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
         <SubmitButton />
+        <Snackbar
+          open={snackbarOpen}
+          autoHideDuration={5000}
+          onClose={() => setSnackbarOpen(false)}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+
+          <Alert
+            onClose={() => setSnackbarOpen(false)}
+            severity={snackbarSeverity}
+            sx={{ width: "100%" }}
+          >
+            {snackbarMessage}
+          </Alert>
+
+        </Snackbar>
       </Box>
     </form>
   );
