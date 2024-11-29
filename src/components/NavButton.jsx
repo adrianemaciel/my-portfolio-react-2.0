@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import { Link } from "react-scroll";
 import { Button } from "@mui/material";
 
-const NavButton = ({ label, to }) => {
+const NavButton = ({ label, to, onClick }) => {
   const theme = useTheme();
 
   return (
@@ -15,6 +15,7 @@ const NavButton = ({ label, to }) => {
       offset={-70}
     >
       <Button
+        onClick={onClick}
         sx={{
           fontFamily: theme.typography.fontFamily,
           color: theme.palette.text.primary,
