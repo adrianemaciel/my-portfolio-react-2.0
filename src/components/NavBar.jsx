@@ -1,10 +1,18 @@
-import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Container, Toolbar, Typography, Drawer } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useState } from "react";
 import NavButton from "./NavButton";
+import MenuButton from "./MenuButton";
 import BackToTopButton from "./BackToTopButton";
 
 const NavBar = () => {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
   const theme = useTheme();
+
+  const handleDrawerToggle = () => {
+    setOpenDrawer(!openDrawer);
+  };
 
   return (
     <Box>
@@ -30,15 +38,46 @@ const NavBar = () => {
               <span>AOM</span>
             </Typography>
 
-            <Box sx={{ display: "flex", gap: 2 }}>
+            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
               <NavButton label="About" to="about" />
               <NavButton label="Skills" to="skills" />
               <NavButton label="Projects" to="projects" />
               <NavButton label="Contact" to="contact" />
             </Box>
+
+            <MenuButton onClick={handleDrawerToggle} />
           </Toolbar>
         </Container>
       </AppBar>
+
+      <Drawer
+        anchor="right"
+        open={openDrawer}
+        onClose={handleDrawerToggle}
+        sx={{
+          "& .MuiDrawer-paper": {
+            backgroundColor: theme.palette.background.default,
+            color: theme.palette.text.primary,
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: 250,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            paddingTop: 6,
+          }}
+        >
+          <NavButton label="About" to="about" onClick={handleDrawerToggle} />
+          <NavButton label="Skills" to="skills" onClick={handleDrawerToggle} />
+          <NavButton label="Projects" to="projects" onClick={handleDrawerToggle} />
+          <NavButton label="Contact" to="contact" onClick={handleDrawerToggle} />
+        </Box>
+      </Drawer>
+
       <BackToTopButton />
     </Box>
   );
