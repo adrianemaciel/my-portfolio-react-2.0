@@ -1,18 +1,23 @@
+import demoPersonalPortfolio from "../assets/demo-personal-portfolio.png"
+import demoNunesSportsStore from "../assets/demo-nunes-sports-store.png"
+import demoPokedex from "../assets/demo-adriane-pokedex-netlify-app.png"
+import demoEcommerce from "../assets/demo-adrianemaciel-github-io-teste-desafio-m3.png"
+
 const projects = [
   {
     title: "My Personal Portfolio - React 2.0",
     description:
-      "Portfólio Pessoal em desenvolvimento com Vite, React e Material UI.",
-    imageUrl: "src/assets/demo-personal-portfolio.png",
+      "Personal Portfolio developed with Vite, React and Material UI.",
+    imageUrl: demoPersonalPortfolio,
     projectLink: "https://adrianemaciel-portfolio-netlify.netlify.app/",
     githubLink: "https://github.com/adrianemaciel/my-portfolio-react-2.0",
     technologies: ["Vite", "React", "Framer Motion", "GitHub", "Git"],
   },
   {
-    title: "Desafio Everymind - Nunes Sports Store 2.0",
+    title: "Everymind Challenge - Nunes Sports Store 2.0",
     description:
-      "Desafio Everymind - Best Minds 2024 - Um sistema para uma empresa fictícia chamada Nunes Sports para exibir, criar, editar e deletar os produtos vendidos pela companhia.",
-    imageUrl: "src/assets/demo-nunes-sports-store.png",
+      "A product management system for a fictional company called Nunes Sports to display, create, edit and delete the products sold by the company.",
+    imageUrl: demoNunesSportsStore,
     projectLink: "https://nunes-sports-store.netlify.app/",
     githubLink: "https://github.com/adrianemaciel/nunes_sports",
     technologies: [
@@ -28,10 +33,10 @@ const projects = [
     ],
   },
   {
-    title: "Desafio FMD - Pokédex",
+    title: "FMD Challenge - Pokédex",
     description:
-      "Projeto desenvolvido para vaga Desenvolvedor Frontend para a Agência FMD. Uma Landing Page sobre Pokémons e suas habilidades.",
-    imageUrl: "src/assets/demo-adriane-pokedex-netlify-app.png",
+      "Interactive landing page that allows you to view Pokémon and their abilities in detail.",
+    imageUrl: demoPokedex,
     projectLink: "https://adriane-pokedex.netlify.app/",
     githubLink:
       "https://github.com/adrianemaciel/fork-frontend-vagas/tree/main",
@@ -45,10 +50,10 @@ const projects = [
     ],
   },
   {
-    title: "Desafio M3 - E-commerce",
+    title: "M3 Challenge - E-commerce ",
     description:
-      "Projeto desenvolvido para vaga Desenvolvedor Frontend para a Agência M3. Um e-commerce de roupas femininas.",
-    imageUrl: "src/assets/demo-adrianemaciel-github-io-teste-desafio-m3.png",
+      "Technical project developed in ReactJs, an e-commerce specialized in women's clothing.",
+    imageUrl: demoEcommerce,
     projectLink: "https://adrianemaciel.github.io/teste-desafio-m3/",
     githubLink: "https://github.com/adrianemaciel/teste-desafio-m3",
     technologies: ["React", "Figma", "GitHub", "Git"],
