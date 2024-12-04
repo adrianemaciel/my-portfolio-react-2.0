@@ -29,31 +29,35 @@ const ContactForm = () => {
     }
 
     const serviceId = import.meta.env.VITE_SERVICE_ID;
-    const teamplateId = import.meta.env.VITE_TEMPLATE_ID;
+    const templateId = import.meta.env.VITE_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
-    emailjs.send(
-      serviceId,
-      teamplateId,
-      templateParams,
-      publicKey
-    )
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing EmailJS environment variables.");
+      setSnackbarSeverity("error");
+      setSnackbarMessage("Configuration error. Please try again later.");
+      setSnackbarOpen(true);
+      return;
+    }
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
       .then(() => {
-        setSnackbarSeverity("success")
-        setSnackbarMessage("Your email was sent successfully!")
-        setSnackbarOpen(true)
+        setSnackbarSeverity("success");
+        setSnackbarMessage("Your email was sent successfully!");
+        setSnackbarOpen(true);
         setName("");
         setEmail("");
         setMessage("");
-      },
-        (error) => {
-          console.log("Failed to send email:", error);
-          setSnackbarSeverity("error")
-          setSnackbarMessage("There was an error sending your email. Please try again")
-          setSnackbarOpen(true)
-
-        }
-      )
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        setSnackbarSeverity("error");
+        setSnackbarMessage(
+          "There was an error sending your email. Please try again later."
+        );
+        setSnackbarOpen(true);
+      })
   };
 
   return (
