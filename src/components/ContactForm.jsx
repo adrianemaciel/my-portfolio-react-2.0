@@ -28,11 +28,15 @@ const ContactForm = () => {
       email: email,
     }
 
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const teamplateId = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+
     emailjs.send(
-      import.meta.env.VITE_SERVICE_ID,
-      import.meta.env.VITE_TEMPLATE_ID,
+      serviceId,
+      teamplateId,
       templateParams,
-      import.meta.env.VITE_PUBLIC_KEY
+      publicKey
     )
       .then(() => {
         setSnackbarSeverity("success")
