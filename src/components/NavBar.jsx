@@ -1,6 +1,7 @@
-import { AppBar, Box, Container, Toolbar, Typography, Drawer } from "@mui/material";
+import { AppBar, Box, Container, Toolbar, Typography, Drawer, IconButton, MenuItem, Select } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import NavButton from "./NavButton";
 import MenuButton from "./MenuButton";
 import BackToTopButton from "./BackToTopButton";
@@ -9,9 +10,14 @@ const NavBar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const theme = useTheme();
+  const { t, i18n } = useTranslation();
 
   const handleDrawerToggle = () => {
     setOpenDrawer(!openDrawer);
+  };
+
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
   };
 
   return (
@@ -37,15 +43,46 @@ const NavBar = () => {
             >
               <span>AOM</span>
             </Typography>
-
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-              <NavButton label="About" to="about" />
-              <NavButton label="Skills" to="skills" />
-              <NavButton label="Projects" to="projects" />
-              <NavButton label="Contact" to="contact" />
+              <NavButton label={t("navbar.about")} to="about" />
+              <NavButton label={t("navbar.skills")} to="skills" />
+              <NavButton label={t("navbar.projects")} to="projects" />
+              <NavButton label={t("navbar.contact")} to="contact" />
             </Box>
 
-            <MenuButton onClick={handleDrawerToggle} />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Select
+                value={i18n.language}
+                onChange={handleLanguageChange}
+                sx={{
+                  color: theme.palette.secondary.main,
+                  fontWeight: 500,
+                  backgroundColor: theme.palette.background.default,
+                  borderRadius: 1,
+                  "& .MuiSelect-icon": {
+                    color: theme.palette.secondary.main,
+                  },
+                }}
+              >
+                <MenuItem
+                  value="en"
+                  sx={{
+                    color: theme.palette.secondary.main,
+                  }}
+                >
+                  Inglês
+                </MenuItem>
+                <MenuItem
+                  value="pt"
+                  sx={{
+                    color: theme.palette.secondary.main,
+                  }}
+                >
+                  Português
+                </MenuItem>
+              </Select>
+              <MenuButton onClick={handleDrawerToggle} />
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>
@@ -71,10 +108,10 @@ const NavBar = () => {
             paddingTop: 6,
           }}
         >
-          <NavButton label="About" to="about" onClick={handleDrawerToggle} />
-          <NavButton label="Skills" to="skills" onClick={handleDrawerToggle} />
-          <NavButton label="Projects" to="projects" onClick={handleDrawerToggle} />
-          <NavButton label="Contact" to="contact" onClick={handleDrawerToggle} />
+          <NavButton label={t("navbar.about")} to="about" onClick={handleDrawerToggle} />
+          <NavButton label={t("navbar.skills")} to="skills" onClick={handleDrawerToggle} />
+          <NavButton label={t("navbar.projects")} to="projects" onClick={handleDrawerToggle} />
+          <NavButton label={t("navbar.contact")} to="contact" onClick={handleDrawerToggle} />
         </Box>
       </Drawer>
 

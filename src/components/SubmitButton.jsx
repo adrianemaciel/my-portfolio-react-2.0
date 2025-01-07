@@ -1,8 +1,10 @@
 import { Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
 
 const SubmitButton = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Button
@@ -23,7 +25,7 @@ const SubmitButton = () => {
         },
       }}
     >
-      Send
+      {t("contactForm.submit")}
     </Button>
   );
 };

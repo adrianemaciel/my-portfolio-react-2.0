@@ -1,9 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
 import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -26,10 +28,10 @@ const Contact = () => {
           }}
           gutterBottom
         >
-          Contact me
+          {t("contact.title")}
         </Typography>
         <Typography variant="body1" align="center" sx={{ lineHeight: 1.6 }}>
-          Feel free to send me a message.
+          {t("contact.subTitle")}
         </Typography>
 
         <ContactForm />
