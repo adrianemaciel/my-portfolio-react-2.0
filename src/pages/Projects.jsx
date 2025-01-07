@@ -2,9 +2,12 @@ import { Box, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import ProjectCard from "./ProjectCard";
 import projects from "../data/projectsData";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
+
   return (
     <Box
       id="projects"
@@ -25,11 +28,13 @@ const Projects = () => {
             marginBottom: "1rem",
             lineHeight: 1.6,
             textAlign: "center",
-            fontSize: { xs: " 2rem", md: "3rem", xl: "3rem" },
+            fontSize: { xs: "2rem", md: "3rem", xl: "3rem" },
           }}
         >
-          Take a look at my developed{" "}
-          <span style={{ color: theme.palette.secondary.main }}>projects</span>{" "}
+          {t("projects.intro.part1")}{" "}
+          <span style={{ color: theme.palette.secondary.main }}>
+            {t("projects.intro.highlight")}
+          </span>{" "}
         </Typography>
       </Box>
 
@@ -38,8 +43,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Grid xs={10} key={index}>
               <ProjectCard
-                title={project.title}
-                description={project.description}
+                title={t(project.title)}
+                description={t(project.description)}
                 imageUrl={project.imageUrl}
                 projectLink={project.projectLink}
                 githubLink={project.githubLink}

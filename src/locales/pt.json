@@ -1,0 +1,73 @@
+{
+    "navbar": {
+        "about": "Sobre",
+        "skills": "Habilidades",
+        "projects": "Projetos",
+        "contact": "Contato"
+    },
+    "about": {
+        "greeting": "Olá,",
+        "introduction": "Eu sou",
+        "role": "Desenvolvedora de Software",
+        "description": {
+            "part1": "Estudante de Análise e Desenvolvimento de Sistemas e desenvolvedora Front-End entusiasmada em criar",
+            "highlight": "experiências interativas",
+            "part2": "digitais na web."
+        }
+    },
+    "skills": {
+        "title": {
+            "highlight": "Habilidades",
+            "andTools": "e Ferramentas"
+        },
+        "description": "Aprendendo e dominando constantemente ferramentas para criar experiências digitais perfeitas."
+    },
+    "projects": {
+        "intro": {
+            "part1": "Dê uma olhada nos meus",
+            "highlight": "projetos"
+        }
+    },
+    "projectCard": {
+        "portfolio": {
+            "title": "Meu Portfólio Pessoal - React 2.0",
+            "description": "Portfólio pessoal desenvolvido com Vite, React e Material UI."
+        },
+        "nunesSports": {
+            "title": "Desafio Everymind - Loja Nunes Sports 2.0",
+            "description": "Um sistema de gerenciamento de produtos para uma empresa fictícia chamada Nunes Sports, para exibir, criar, editar e excluir os produtos vendidos pela empresa."
+        },
+        "pokedex": {
+            "title": "Desafio FMD - Pokédex",
+            "description": "Página interativa que permite visualizar Pokémon e suas habilidades em detalhes."
+        },
+        "ecommerce": {
+            "title": "Desafio M3 - E-commerce",
+            "description": "Projeto técnico desenvolvido em ReactJs, um e-commerce especializado em roupas femininas."
+        },
+        "buttons": {
+            "viewProject": "Ver Projeto",
+            "githubRepo": "Repositório no GitHub"
+        }
+    },
+    "contact": {
+        "title": "Entre em contato comigo",
+        "subTitle": "Sinta-se à vontade para me enviar uma mensagem."
+    },
+    "contactForm": {
+        "nameLabel": "Nome",
+        "namePlaceholder": "Digite seu nome",
+        "emailLabel": "E-mail",
+        "emailPlaceholder": "Digite seu e-mail",
+        "messageLabel": "Mensagem",
+        "messagePlaceholder": "Escreva sua mensagem aqui",
+        "submit": "Enviar"
+    },
+    "footer": {
+        "about": "Sobre",
+        "skills": "Habilidades",
+        "projects": "Projetos",
+        "contact": "Contato",
+        "copyright": "{{name}} {{year}} © Todos os direitos reservados."
+    }
+}

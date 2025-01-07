@@ -1,10 +1,12 @@
 import { Container, Typography, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
 import { Link as ScrollLink } from "react-scroll";
 import SocialButtons from "../components/SocialButtons";
 
 const Footer = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -43,7 +45,7 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-                About
+                {t("footer.about")}
               </ScrollLink>
               {" • "}
               <ScrollLink
@@ -58,7 +60,7 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-                Skills
+                {t("footer.skills")}
               </ScrollLink>
               {" • "}
               <ScrollLink
@@ -73,7 +75,7 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-                Projects
+                {t("footer.projects")}
               </ScrollLink>
               {" • "}
               <ScrollLink
@@ -88,7 +90,7 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-                Contact
+                {t("footer.contact")}
               </ScrollLink>
             </Typography>
           </Box>
@@ -111,8 +113,9 @@ const Footer = () => {
             }}
             align="center"
           >
-            Adriane Maciel 2024 © All rights reserved.
+            {t("footer.copyright", { year: new Date().getFullYear(), name: "Adriane Maciel" })}
           </Typography>
+
         </Box>
       </Container>
     </Box>

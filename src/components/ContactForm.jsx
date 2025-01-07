@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { Box, Snackbar, Alert } from "@mui/material";
 import SubmitButton from "./SubmitButton";
@@ -11,6 +12,8 @@ const ContactForm = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+
+  const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,23 +74,25 @@ const ContactForm = () => {
         }}
       >
         <StyledTextField
-          label="Name"
+          label={t("contactForm.nameLabel")}
           type="text"
-          placeholder="Name"
+          placeholder={t("contactForm.namePlaceholder")}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <StyledTextField
-          label="E-mail"
+          label={t("contactForm.emailLabel")}
           type="text"
-          placeholder=" E-mail"
+          placeholder={t("contactForm.emailPlaceholder")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <StyledTextField
-          label="Message"
+          label={t("contactForm.messageLabel")}
           type="message"
-          multiline rows={4}
+          multiline
+          rows={4}
+          placeholder={t("contactForm.messagePlaceholder")}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />

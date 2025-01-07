@@ -1,11 +1,13 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 import { slideIn, staggerContainer, skillItem } from "../animations/animations";
 import skills from "../data/skillsData";
 
 const Skills = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -43,18 +45,19 @@ const Skills = () => {
             color: theme.palette.text.primary,
             marginBottom: "1rem",
             textAlign: "left",
-            fontSize: {xs: " 2rem", md: "3rem", xl: "3rem"}
+            fontSize: { xs: "2rem", md: "3rem", xl: "3rem" },
           }}
         >
-          <span style={{ color: theme.palette.secondary.main }}>Skills</span>{" "}
-          and Tools
+          <span style={{ color: theme.palette.secondary.main }}>
+            {t("skills.title.highlight")}
+          </span>{" "}
+          {t("skills.title.andTools")}
         </Typography>
         <Typography
           variant="body1"
           sx={{ lineHeight: 1.6, textAlign: "left", marginBottom: "1rem" }}
         >
-          Constantly learning and mastering tools to create seamless digital
-          experiences.
+          {t("skills.description")}
         </Typography>
       </motion.div>
 

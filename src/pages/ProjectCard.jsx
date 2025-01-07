@@ -8,6 +8,7 @@ import {
   Box,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { getTechnologyIcon } from "../utils/iconMapper";
 
@@ -20,6 +21,7 @@ const ProjectCard = ({
   technologies,
 }) => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -85,7 +87,7 @@ const ProjectCard = ({
             target="_blank"
             sx={{ color: theme.palette.secondary.main }}
           >
-            View Project
+            {t("projectCard.buttons.viewProject")}
           </Button>
           <Button
             variant="outlined"
@@ -95,7 +97,7 @@ const ProjectCard = ({
             target="_blank"
             sx={{ color: theme.palette.secondary.main }}
           >
-            GitHub Repo
+            {t("projectCard.buttons.githubRepo")}
           </Button>
         </CardActions>
       </Card>
