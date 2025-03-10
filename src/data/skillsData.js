@@ -9,7 +9,7 @@ const skills = [
   { name: "MySQL", size: 20 },
   { name: "Figma", size: 18 },
   { name: "Postman", size: 24 },
-  { name: "Styled-Components", size: 18 },
+  { name: "TailwindCSS", size: 18 },
   { name: "Material UI", size: 28 },
   { name: "Vite", size: 26 },
   { name: "SQL", size: 20 },

@@ -44,7 +44,7 @@ const Skills = () => {
           sx={{
             color: theme.palette.text.primary,
             marginBottom: "1rem",
-            textAlign: "left",
+            textAlign: { xs: "center", md: "left" },
             fontSize: { xs: "2rem", md: "3rem", xl: "3rem" },
           }}
         >
