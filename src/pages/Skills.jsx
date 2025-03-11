@@ -1,18 +1,25 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, Button, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import { slideIn, staggerContainer, skillItem } from "../animations/animations";
+import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import skills from "../data/skillsData";
 
 const Skills = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const handleSeeAllSkills = () => {
+    navigate("/skills");
+  };
 
   return (
     <Box
@@ -20,7 +27,7 @@ const Skills = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        justifyContent: "space-between",
+        justifyContent: "space-around",
         alignItems: "center",
         minHeight: "50vh",
         width: "100%",
@@ -53,12 +60,36 @@ const Skills = () => {
           </span>{" "}
           {t("skills.title.andTools")}
         </Typography>
+
         <Typography
           variant="body1"
-          sx={{ lineHeight: 1.6, textAlign: "left", marginBottom: "1rem" }}
+          sx={{
+            lineHeight: 1.6,
+            textAlign: "left",
+            marginBottom: "1rem",
+            display: { xs: "none", md: "block" },
+          }}
         >
           {t("skills.description")}
         </Typography>
+
+        <Button
+          variant="text"
+          onClick={handleSeeAllSkills}
+          sx={{
+            display: "flex",
+            gap: "8px",
+            color: theme.palette.secondary.main,
+            borderColor: theme.palette.secondary.main,
+            "&:hover": {
+              backgroundColor: theme.palette.secondary.main,
+              color: theme.palette.primary.main,
+            },
+          }}
+        >
+          Ver detalhes
+          <FaArrowRight />
+        </Button>
       </motion.div>
 
       <motion.div
