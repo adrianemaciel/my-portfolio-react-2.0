@@ -1,10 +1,14 @@
 import { Box, Typography, useTheme, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
 import SkillDetailsCard from "../components/SkillDetailsCard";
 
 const SkillDetails = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const handleGoBack = () => {
@@ -35,9 +39,9 @@ const SkillDetails = () => {
           fontSize: { xs: "2rem", md: "3rem", xl: "3rem" },
         }}
       >
-        Meu{" "}
+        {t("skillDetails.title.part1")}{" "}
         <span style={{ color: theme.palette.secondary.main }}>
-          conjunto de habilidades
+          {t("skillDetails.title.highlight")}
         </span>
         {""}
       </Typography>
@@ -62,7 +66,7 @@ const SkillDetails = () => {
         }}
       >
         <FaArrowLeft />
-        Voltar
+        {t("skillDetails.button")}
       </Button>
 
       <SkillDetailsCard />

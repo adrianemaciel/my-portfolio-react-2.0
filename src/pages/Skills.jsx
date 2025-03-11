@@ -87,7 +87,7 @@ const Skills = () => {
             },
           }}
         >
-          Ver detalhes
+          {t("skills.button")}
           <FaArrowRight />
         </Button>
       </motion.div>
