@@ -1,73 +1,83 @@
 {
-    "navbar": {
-        "about": "About",
-        "skills": "Skills",
-        "projects": "Projects",
-        "contact": "Contact"
-    },
-    "about": {
-        "greeting": "Hello,",
-        "introduction": "I am",
-        "role": "Software Developer",
-        "description": {
-            "part1": "Systems analysis and development student and developer Front-End enthusiastic about creating",
-            "highlight": "interactive",
-            "part2": "digital experiences on the web."
-        }
-    },
-    "skills": {
-        "title": {
-            "highlight": "Skills",
-            "andTools": "and Tools"
-        },
-        "description": "Constantly learning and mastering tools to create seamless digital experiences."
-    },
-    "projects": {
-        "intro": {
-            "part1": "Take a look at my developed",
-            "highlight": "projects"
-        }
-    },
-    "projectCard": {
-        "portfolio": {
-            "title": "My Personal Portfolio - React 2.0",
-            "description": "Personal Portfolio developed with Vite, React and Material UI."
-        },
-        "nunesSports": {
-            "title": "Everymind Challenge - Nunes Sports Store 2.0",
-            "description": "A product management system for a fictional company called Nunes Sports to display, create, edit and delete the products sold by the company."
-        },
-        "pokedex": {
-            "title": "FMD Challenge - Pokédex",
-            "description": "Interactive landing page that allows you to view Pokémon and their abilities in detail."
-        },
-        "ecommerce": {
-            "title": "M3 Challenge - E-commerce",
-            "description": "Technical project developed in ReactJs, an e-commerce specialized in women's clothing."
-        },
-        "buttons": {
-            "viewProject": "View Project",
-            "githubRepo": "GitHub Repo"
-        }
-    },
-    "contact": {
-        "title": "Contact me",
-        "subTitle": "Feel free to send me a message."
-    },
-    "contactForm": {
-        "nameLabel": "Name",
-        "namePlaceholder": "Enter your name",
-        "emailLabel": "E-mail",
-        "emailPlaceholder": "Enter your email",
-        "messageLabel": "Message",
-        "messagePlaceholder": "Write your message here",
-        "submit": "Send"
-    },
-    "footer": {
-        "about": "About",
-        "skills": "Skills",
-        "projects": "Projects",
-        "contact": "Contact",
-        "copyright": "{{name}} {{year}} © All rights reserved."
+  "navbar": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "greeting": "Hello,",
+    "introduction": "I am",
+    "role": "Software Developer",
+    "description": {
+      "part1": "Systems analysis and development student and developer Front-End enthusiastic about creating",
+      "highlight": "interactive",
+      "part2": "digital experiences on the web."
     }
+  },
+  "skills": {
+    "title": {
+      "highlight": "Skills",
+      "andTools": "and Tools"
+    },
+    "description": "Constantly learning and mastering tools to create seamless digital experiences.",
+    "button": "See details"
+  },
+
+  "skillDetails": {
+    "title": {
+      "part1": "My",
+      "highlight": "skill set"
+    },
+    "button": "Back"
+  },
+
+  "projects": {
+    "intro": {
+      "part1": "Take a look at my developed",
+      "highlight": "projects"
+    }
+  },
+  "projectCard": {
+    "portfolio": {
+      "title": "My Personal Portfolio - React 2.0",
+      "description": "Personal Portfolio developed with Vite, React and Material UI."
+    },
+    "nunesSports": {
+      "title": "Everymind Challenge - Nunes Sports Store 2.0",
+      "description": "A product management system for a fictional company called Nunes Sports to display, create, edit and delete the products sold by the company."
+    },
+    "pokedex": {
+      "title": "FMD Challenge - Pokédex",
+      "description": "Interactive landing page that allows you to view Pokémon and their abilities in detail."
+    },
+    "ecommerce": {
+      "title": "M3 Challenge - E-commerce",
+      "description": "Technical project developed in ReactJs, an e-commerce specialized in women's clothing."
+    },
+    "buttons": {
+      "viewProject": "View Project",
+      "githubRepo": "GitHub Repo"
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "subTitle": "Feel free to send me a message."
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Enter your email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message here",
+    "submit": "Send"
+  },
+  "footer": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "copyright": "{{name}} {{year}} © All rights reserved."
+  }
 }
