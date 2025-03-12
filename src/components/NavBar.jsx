@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Toolbar,
-  Typography,
   Drawer,
   MenuItem,
   Select,
@@ -41,18 +40,14 @@ const NavBar = () => {
               justifyContent: "space-between",
             }}
           >
-            <Typography
-              variant="h6"
+            <Box
+              component="img"
+              src="src/assets/icons8-programa-64.png"
+              alt="Logo"
               sx={{
-                fontFamily: theme.typography.fontFamily,
-                color: theme.palette.secondary.main,
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                textDecoration: "none",
+                height: 40,
               }}
-            >
-              <span>AOM</span>
-            </Typography>
+            />
 
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
               <NavButton label={t("navbar.about")} to="about" />
