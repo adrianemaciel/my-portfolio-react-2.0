@@ -1,10 +1,19 @@
-import { AppBar, Box, Container, Toolbar, Typography, Drawer, IconButton, MenuItem, Select } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Container,
+  Toolbar,
+  Drawer,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import NavButton from "./NavButton";
 import MenuButton from "./MenuButton";
 import BackToTopButton from "./BackToTopButton";
+import CloseButton from "./CloseButton";
 
 const NavBar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -31,18 +40,15 @@ const NavBar = () => {
               justifyContent: "space-between",
             }}
           >
-            <Typography
-              variant="h6"
+            <Box
+              component="img"
+              src="src/assets/icons8-programa-64.png"
+              alt="Logo"
               sx={{
-                fontFamily: theme.typography.fontFamily,
-                color: theme.palette.secondary.main,
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                textDecoration: "none",
+                height: 40,
               }}
-            >
-              <span>AOM</span>
-            </Typography>
+            />
+
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
               <NavButton label={t("navbar.about")} to="about" />
               <NavButton label={t("navbar.skills")} to="skills" />
@@ -105,13 +111,31 @@ const NavBar = () => {
             flexDirection: "column",
             alignItems: "center",
             gap: 2,
-            paddingTop: 6,
+            paddingTop: 1,
           }}
         >
-          <NavButton label={t("navbar.about")} to="about" onClick={handleDrawerToggle} />
-          <NavButton label={t("navbar.skills")} to="skills" onClick={handleDrawerToggle} />
-          <NavButton label={t("navbar.projects")} to="projects" onClick={handleDrawerToggle} />
-          <NavButton label={t("navbar.contact")} to="contact" onClick={handleDrawerToggle} />
+          <CloseButton onClick={handleDrawerToggle} />
+
+          <NavButton
+            label={t("navbar.about")}
+            to="about"
+            onClick={handleDrawerToggle}
+          />
+          <NavButton
+            label={t("navbar.skills")}
+            to="skills"
+            onClick={handleDrawerToggle}
+          />
+          <NavButton
+            label={t("navbar.projects")}
+            to="projects"
+            onClick={handleDrawerToggle}
+          />
+          <NavButton
+            label={t("navbar.contact")}
+            to="contact"
+            onClick={handleDrawerToggle}
+          />
         </Box>
       </Drawer>
 

@@ -1,22 +1,25 @@
 import { IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import PropTypes from "prop-types";
 
-const MenuButton = ({ onClick }) => {
+const CloseButton = ({ onClick }) => {
   return (
     <IconButton
       edge="end"
       color="inherit"
-      aria-label="menu"
       onClick={onClick}
-      sx={{ display: { xs: "flex", md: "none" } }}
+      sx={{
+        alignSelf: "flex-end",
+        marginRight: 2,
+      }}
     >
-      <MenuIcon />
+      <CloseIcon />
     </IconButton>
   );
 };
-MenuButton.propTypes = {
+
+CloseButton.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default MenuButton;
+export default CloseButton;
