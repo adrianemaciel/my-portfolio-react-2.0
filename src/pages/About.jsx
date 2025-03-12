@@ -16,7 +16,8 @@ const About = () => {
         flexDirection="column"
         alignItems="start"
         justifyContent="center"
-        height="100vh"
+        minHeight={{ xs: "70vh", md: "100vh", xl: "100vh" }}
+        padding={{ xs: "10px", md: "10px", xl: "25px" }}
       >
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
           <Typography
@@ -47,7 +48,14 @@ const About = () => {
         </motion.div>
 
         <motion.div initial="hidden" animate="visible" variants={slideIn}>
-          <Typography variant="h3" sx={{ color: theme.palette.text.primary }}>
+          <Typography
+            variant="h3"
+            sx={{
+              color: theme.palette.text.primary,
+              fontSize: { xs: "2rem", md: "3rem", xl: "3rem" },
+              paddingTop: { xs: "0.5rem", md: "0.1rem", xl: "0.1rem" },
+            }}
+          >
             {t("about.role")}
           </Typography>
         </motion.div>
@@ -55,7 +63,12 @@ const About = () => {
         <motion.div initial="hidden" animate="visible" variants={slideIn}>
           <Typography
             variant="subtitle1"
-            sx={{ color: theme.palette.text.secondary, marginBottom: "1.5rem" }}
+            sx={{
+              color: theme.palette.text.secondary,
+              fontSize: { xs: "1rem", md: "1.5rem", xl: "1.5rem" },
+
+              paddingTop: { xs: "0.5rem", md: "0.1rem", xl: "0.1rem" },
+            }}
           >
             {t("about.description.part1")}{" "}
             <Box component="span" sx={{ color: theme.palette.secondary.main }}>
