@@ -8,7 +8,11 @@ const SocialButtons = () => {
   const theme = useTheme();
 
   return (
-    <Box display="flex" gap={2}>
+    <Box
+      display="flex"
+      gap={2}
+      paddingTop={{ xs: "1rem", md: "1.5rem", xl: "1.5rem" }}
+    >
       <IconButton
         component="a"
         href="https://www.linkedin.com/in/adrianemacieldeveloper/"
