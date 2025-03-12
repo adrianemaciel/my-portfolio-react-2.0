@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material/styles";
 import { Link } from "react-scroll";
 import { Button } from "@mui/material";
+import PropTypes from "prop-types";
 
 const NavButton = ({ label, to, onClick }) => {
   const theme = useTheme();
@@ -29,6 +30,11 @@ const NavButton = ({ label, to, onClick }) => {
       </Button>
     </Link>
   );
+};
+NavButton.propTypes = {
+  label: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default NavButton;
