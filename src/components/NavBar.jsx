@@ -14,7 +14,7 @@ import NavButton from "./NavButton";
 import MenuButton from "./MenuButton";
 import BackToTopButton from "./BackToTopButton";
 import CloseButton from "./CloseButton";
-import Logo from "../assets/icons8-programa-64.png"
+import Logo from "../assets/icons8-programa-64.png";
 
 const NavBar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -32,7 +32,16 @@ const NavBar = () => {
 
   return (
     <Box>
-      <AppBar position="static" color="background">
+      <AppBar
+        position="fixed"
+        component="nav"
+        elevation={6}
+        color="background"
+        sx={{
+          backgroundColor: theme.palette.background.default,
+          zIndex: theme.zIndex.drawer + 1,
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar
             id="back-to-top-anchor"
@@ -94,11 +103,14 @@ const NavBar = () => {
         </Container>
       </AppBar>
 
+      <Toolbar />
+
       <Drawer
         anchor="right"
         open={openDrawer}
         onClose={handleDrawerToggle}
         sx={{
+          zIndex: theme.zIndex.drawer + 2,
           "& .MuiDrawer-paper": {
             backgroundColor: theme.palette.background.default,
             color: theme.palette.text.primary,
