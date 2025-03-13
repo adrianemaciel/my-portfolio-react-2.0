@@ -14,6 +14,7 @@ import NavButton from "./NavButton";
 import MenuButton from "./MenuButton";
 import BackToTopButton from "./BackToTopButton";
 import CloseButton from "./CloseButton";
+import Logo from "../assets/icons8-programa-64.png"
 
 const NavBar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -42,7 +43,7 @@ const NavBar = () => {
           >
             <Box
               component="img"
-              src="src/assets/icons8-programa-64.png"
+              src={Logo}
               alt="Logo"
               sx={{
                 height: 40,
